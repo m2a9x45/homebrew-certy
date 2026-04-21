@@ -20,17 +20,15 @@ brew tap m2a9x45/certy
 brew install certy
 ```
 
-### Pre-built binaries
+## Usage
 
-Download the latest release from the [releases page](https://github.com/m2a9x45/certy/releases).
+### `certy fetch`
 
-### From source
+Fetch the EU QTSP trust list (list of qualified trust service providers and their certificates).
 
 ```shell
-go install lewisdukelow.com/eidas/certy@latest
+certy fetch
 ```
-
-## Commands
 
 ### `certy parse`
 
@@ -52,25 +50,41 @@ Convert a DER-encoded certificate to PEM format.
 cat certificate.der | certy pem
 ```
 
-### `certy fetch`
-
-Fetch the EU QTSP trust list (list of qualified trust service providers and their certificates).
-
-```shell
-certy fetch
-```
-
 ## Examples
 
-### Parse a QWAC certificate
-
 ```shell
-certy parse qwac.der
+certy parse qwac.pem
 ```
 
-Output includes:
-- Certificate type (QWAC or QSEAL)
-- Subject information (organization, country, etc.)
-- Validity period
-- Issuing QTSP details
-- Certificate chain
+```
+🔎 Certificate IDs:
+  x5t: AbC1dEfGhIjKlMnOpQrStUvWxYz
+  x5t#S256: 9F3aK2mN8pQw7rT5vB6cD1eF0gH2iJ3kL4mN5oP6
+  Open Banking KID: EXAMPLE-KID-123456789
+
+☘️ Certificate Info:
+----------------------
+Subject:
+  Common Name: qwac.example-bank.test
+  Organization: [Example Bank Digital Services Ltd]
+  Locality: [Example City]
+  Country: [EX]
+  Serial Number: 12345678901234567890
+  Org ID: PSDEX-TEST-000001
+
+🇪🇺 Found Issuing Certificate:
+----------------------------
+Subject:
+  Common Name: Example Trust Services G3 TLS RSA4096 SHA256 CA1
+  Organization: [Example Trust Services Ltd]
+  Country: [EX]
+
+QTSP Dashboard Url: https://example.eidas.test/efda/trust-services/browse/tsp/example/service/1
+
+🌴 Found Root Certificate:
+----------------------------
+Subject:
+  Common Name: Example Root CA 1 G3
+  Organization: [Example Certification Authority Ltd]
+  Country: [EX]
+```
