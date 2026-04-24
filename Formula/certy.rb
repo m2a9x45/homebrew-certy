@@ -5,10 +5,10 @@ class Certy < Formula
 
   if Hardware::CPU.arm?
     url "https://binaries.certy.lewisdukelow.com/v0.0.2/certy_0.0.2_darwin_arm64.tar.gz"
-    sha256 "6e2f4f5663829e94ee166f866aba71dbdadb319023e93f7249be813c934dae32"
+    sha256 "def1a80019506526ffbd044f7b1390943adfd19eedfdba8e44c693176a7b38dc"
   else
     url "https://binaries.certy.lewisdukelow.com/v0.0.2/certy_0.0.2_darwin_amd64.tar.gz"
-    sha256 "90916a59dac922b8943ed3fd18cecafe4f639553b0da998348d5240d46a68048"
+    sha256 "cdaf68cfa80d64bdd54c71b8a0b940b83ca37079b13a34afcce284450c9399fa"
   end
 
   def install
