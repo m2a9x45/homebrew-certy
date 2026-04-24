@@ -1,7 +1,7 @@
 class Certy < Formula
   desc "CLI tool to work with eIDAS QWACs & QSEALs"
   homepage "https://github.com/m2a9x45/certy"
-  version "0.0.1"
+  version "0.0.2"
 
   if Hardware::CPU.arm?
     url "https://binaries.certy.lewisdukelow.com/v0.0.2/certy_0.0.2_darwin_arm64.tar.gz"
